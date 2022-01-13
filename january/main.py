@@ -1,5 +1,6 @@
 import numpy as np
 from PIL import Image
+from time import time
 
 signs = "@%#*+=-:. "
 
@@ -12,7 +13,11 @@ def pic2ascii(path, width, height = 0):
     img = img.resize((width, height))
     
     pixels = img.getdata()
-    print("".join([signs[int(pixel // 25.5000001)] for pixel in pixels]))
-    #Image.fromarray(pixels).save("C:\\1M1P\\january\\test_gray.png")
+    asciiString = "".join([signs[int(pixel // 25.5000001)] for pixel in pixels])
+    asciiString = "\n".join([asciiString[i:i+width] for i in range(0, len(asciiString), width)])
+    asciiString = " ".join(asciiString)
+    
+    with open(path[:-4] + ".txt", "w") as f:
+        f.write(asciiString)
 
-pic2ascii("test.png", 50)
+pic2ascii('C:\\1M1P\january\\las.png', 150)
