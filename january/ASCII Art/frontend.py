@@ -20,7 +20,7 @@ class App:
 
     #button functions
     def displayImage(self):
-        path = fd.askopenfilename(title='Open a file', initialdir='C:\\1M1P\\january\\files')
+        path = fd.askopenfilename(title='Open a file', initialdir='C:\\1M1P\\january\\ASCII Art\\files')
         print(path)
         
         screen = tk.Tk()
