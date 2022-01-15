@@ -51,14 +51,9 @@ class App:
 
         #create buttons
         imgFrame = tk.Frame(self.mainApp)
-        imgFrame.pack(side="left", expand=True)
+        imgFrame.pack(expand=True)
         buttonImg = ttk.Button(imgFrame, text="Set image path", command=self.displayImage)
         buttonImg.pack()
-
-        vidFrame = tk.Frame(self.mainApp)
-        vidFrame.pack(side="right", expand=True)
-        buttonVid = ttk.Button(vidFrame, text="Set video path")
-        buttonVid.pack()
         
         buttonExit = ttk.Button(self.mainApp, text="Exit", command=self.mainApp.destroy)
         buttonExit.pack(side="bottom")
