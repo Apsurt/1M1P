@@ -3,26 +3,64 @@ import tkinter as tk
 from tkinter import filedialog as fd, ttk
 from asciipng import pic2ascii
 
-filetypes = (('Images', '*.png'), ('Videos', '*.mp4'))
+#consts
+fileimages = (('Images', '*.png'))
+filevideos = (('Videos', '*.mp4'))
+width = 300
+title = "    ___   _____ ______________   ___    ____  ______\n   /   | / ___// ____/  _/  _/  /   |  / __ \/_  __/\n  / /| | \__ \/ /    / / / /   / /| | / /_/ / / /   \n / ___ |___/ / /____/ /_/ /   / ___ |/ _, _/ / /    \n/_/  |_/____/\____/___/___/  /_/  |_/_/ |_| /_/     \n"                                                    
 
-def setPath():
-    path = fd.askopenfilename(title='Open a file', initialdir='C:\\1M1P\\january\\files', filetypes=filetypes)
-    setPathRoot.destroy()
-    
-    screen = tk.Tk()
-    screen.attributes('-fullscreen', True)
+class App:
+    def __init__(self):
+        #init root
+        self.mainApp = tk.Tk()
+        self.mainApp.title("ASCII Art")
+        self.mainApp.resizable(False, False)
+        self.mainApp.attributes('-fullscreen', True)
+        self.mainApp.geometry('720x405')
 
-    asciitext = tk.Label(screen, font = ("Courier", 3), text=pic2ascii(Image.open(path), 400))
-    asciitext.pack(expand=True)
+    #button functions
+    def displayImage(self):
+        path = fd.askopenfilename(title='Open a file', initialdir='C:\\1M1P\\january\\files')
+        print(path)
+        
+        screen = tk.Tk()
+        screen.attributes('-fullscreen', True)
+        screen.resizable(False, False)
+        screen.title("Screen")
+        
+        asciiString = pic2ascii(Image.open(path), width)
+        asciiLabel = tk.Label(screen, text=asciiString, font=("Courier", 3))
+        asciiLabel.pack(expand=True)
+        
+        def buttonCommand():
+            screen.destroy()
+            self.__init__()
+            self.show()
+        
+        button = ttk.Button(screen, text="Exit", command=buttonCommand)
+        button.pack()
+        
+        self.mainApp.destroy()
+        screen.mainloop()
 
-    screen.mainloop()
+    #main
+    def show(self):        
+        #init logo
+        logo = tk.Label(self.mainApp, text=title, font=("Courier", 12), pady=20)
+        logo.pack()
 
-setPathRoot = tk.Tk()
-setPathRoot.title('Set path')
-setPathRoot.resizable(False, False)
-setPathRoot.geometry('300x150')
+        #create buttons
+        imgFrame = tk.Frame(self.mainApp)
+        imgFrame.pack(side="left", expand=True)
+        buttonImg = ttk.Button(imgFrame, text="Set image path", command=self.displayImage)
+        buttonImg.pack()
 
-button = ttk.Button(setPathRoot, text='Set path', command=setPath)
-button.pack(expand=True)
+        vidFrame = tk.Frame(self.mainApp)
+        vidFrame.pack(side="right", expand=True)
+        buttonVid = ttk.Button(vidFrame, text="Set video path")
+        buttonVid.pack()
+        
+        buttonExit = ttk.Button(self.mainApp, text="Exit", command=self.mainApp.destroy)
+        buttonExit.pack(side="bottom")
 
-setPathRoot.mainloop()
+        self.mainApp.mainloop()
