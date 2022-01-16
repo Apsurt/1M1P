@@ -51,7 +51,10 @@ class Sudoku:
     def print(self):
         for y in self.grid:
             for x in y:
-                print(x, end=' ')
+                if x == 0:
+                    print('_', end = ' ')
+                else:
+                    print(x, end=' ')
             print()
 
     def adjecent(self, coordinates):
