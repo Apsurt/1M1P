@@ -1,4 +1,5 @@
-from sudoku import Sudoku
+from sudoku import *
+from solver import *
 
 example = [[3,0,6,4,5,0,0,0,0],
            [0,0,0,6,0,0,0,2,0],
@@ -11,6 +12,6 @@ example = [[3,0,6,4,5,0,0,0,0],
            [0,0,0,7,0,0,8,0,6]]
 
 sudoku = Sudoku(example)
-
+solve(sudoku)
 sudoku.print()
 print(sudoku.check())

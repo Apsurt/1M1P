@@ -48,6 +48,15 @@ class Sudoku:
                                 return False, (y,x)
         return True
     
+    def is_win(self):
+        if self.check():
+            for y in range(len(self.grid)):
+                for x in range(len(self.grid[0])):
+                    if self.grid[y][x] == 0:
+                        return False
+            return True
+        return False
+    
     def fill_ones(self):
         for y in range(len(self.grid)):
             for x in range(len(self.grid[0])):
