@@ -9,7 +9,7 @@ Months:
     - [ ] ~~Video to ASCII Animation~~
     - [X] Tkinter interface
     - Sudoku:
-    - [ ] Sudoku Framework
+    - [X] Sudoku Framework
     - [ ] Solver
     - [ ] Generator
     - [ ] Tkinter GUI
