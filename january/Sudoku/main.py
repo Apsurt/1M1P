@@ -1,3 +1,4 @@
+from time import time
 from sudoku import *
 from solver import *
 
@@ -11,7 +12,13 @@ example = [[3,0,6,4,5,0,0,0,0],
            [0,0,8,0,1,0,0,0,0],
            [0,0,0,7,0,0,8,0,6]]
 
+start = time()
+
 sudoku = Sudoku(example)
+sudoku.print()
+print()
 solve(sudoku)
 sudoku.print()
-print(sudoku.check())
+print(sudoku.is_win())
+
+print(time() - start)

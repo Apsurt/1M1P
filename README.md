@@ -10,7 +10,7 @@ Months:
     - [X] Tkinter interface
     - Sudoku:
     - [X] Sudoku Framework
-    - [ ] Solver
+    - [X] Solver
     - [ ] Generator
     - [ ] Tkinter GUI
     - [ ] Different API GUI
