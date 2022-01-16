@@ -1,6 +1,3 @@
-from operator import pos
-
-
 class Sudoku:
     def __init__(self, grid = [[0 for _ in range(9)] for _ in range(9)]):
         self.grid = grid
