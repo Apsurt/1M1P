@@ -13,6 +13,7 @@ Months:
     - [ ] Solver
     - [ ] Generator
     - [ ] Tkinter GUI
+    - [ ] Different API GUI
 - [ ] February
 - [ ] March
 - [ ] April

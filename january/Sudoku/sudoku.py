@@ -22,8 +22,8 @@ class Sudoku:
     def possible(self, coordinates):
         x, y = coordinates
         possible = []
-        for num in range(9):
-            if not(num in self.horizontal[y]) and not(num in self.vertical[x]) and not(num in self.box[(y//3)*3+(x//3)]):
+        for num in range(1, 10):
+            if (self.grid[y][x] == 0) and not(num in self.horizontal[y]) and not(num in self.vertical[x]) and not(num in self.box[(y//3)*3+(x//3)]):
                 possible.append(num)
         return possible
     
@@ -47,6 +47,13 @@ class Sudoku:
                             if self.box[(y//3)*3+(x//3)][cell] == self.grid[y][x]:
                                 return False, (y,x)
         return True
+    
+    def fill_ones(self):
+        for y in range(len(self.grid)):
+            for x in range(len(self.grid[0])):
+                a = self.possible((x,y))
+                if len(a) == 1:
+                    self.set_cell((x,y), a[0])
     
     def print(self):
         for y in self.grid:
