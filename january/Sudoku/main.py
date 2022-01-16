@@ -15,7 +15,6 @@ example = [[0,0,0,7,8,0,4,0,5],
            [0,0,5,3,1,2,0,0,9]]
 
 sudoku = Sudoku()
-generate(sudoku)
 sudoku.print()
 print()
 solve(sudoku)
