@@ -16,3 +16,15 @@ def input_nums(sudoku):
                 press(str(sudoku.grid[y][x]))
                 press('left')
         press('down')
+
+def screen_box(name, box, click):
+    moveTo(click[0], click[1])
+    screenshot(region=(*box, 200, 200)).save('C:\\1M1P\january\Sudoku\\files\\'+str(name)+'st_sqr.png')
+
+def get_sudoku():
+    hotkey('alt', 'tab')
+    screen_box(1, (370,200), (570, 400))
+    screen_box(2, (550,200), (370, 400))
+    hotkey('alt', 'tab')
+
+get_sudoku()

@@ -11,7 +11,7 @@ Months:
     - Sudoku:
     - [X] Sudoku framework
     - [X] Solver
-    - [ ] Generator
+    - [X] Generator
     - [ ] Solving on website
     - [ ] Tkinter GUI
     - [ ] Different API GUI
