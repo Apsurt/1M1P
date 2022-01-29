@@ -1,0 +1,24 @@
+{
+    "cards": [
+        {
+            "name": "Glock 72 Auto",
+            "type": "weapon",
+            "origins": ["prelonger",
+                        "ivy",
+                        "mutant",
+                        "cyber"],
+            "damage": 2,
+            "accuracy": 0.6,
+            "effect": "shoots 6 times"
+        },
+        {
+            "name": "Las3r 46X Gun",
+            "type": "weapon",
+            "origins": ["cyber"],
+            "damage": 14,
+            "accuracy": 0.9,
+            "stun": 1,
+            "effect": "requires 2 turn to load"
+        }
+    ]
+}

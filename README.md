@@ -12,10 +12,12 @@ Months:
     - [X] Sudoku framework
     - [X] Solver
     - [X] Generator
-    - [ ] Solving on website
-    - [ ] Tkinter GUI
-    - [ ] Different API GUI
+    - [ ] ~~Solving on website~~
+    - [ ] ~~Tkinter GUI~~
+    - [ ] ~~Different API GUI~~
 - [ ] February
+  - Card game in terminal:
+  - [ ] TBA
 - [ ] March
 - [ ] April
 - [ ] May

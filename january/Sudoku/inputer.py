@@ -26,5 +26,3 @@ def get_sudoku():
     screen_box(1, (370,200), (570, 400))
     screen_box(2, (550,200), (370, 400))
     hotkey('alt', 'tab')
-
-get_sudoku()
